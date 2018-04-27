@@ -1,0 +1,35 @@
+{
+  "name": "pp-spb-examples",
+  "version": "1.0.0",
+  "description": "Smart Payment Button Example Apps",
+  "main": "install.js",
+  "dependencies": {
+    "child-process-promise": "^2.2.1",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppnsanders/pp-spb-examples.git"
+  },
+  "keywords": [
+    "PayPal",
+    "Express",
+    "Checkout",
+    "Smart",
+    "Payment",
+    "Buttons",
+    "NodeJS",
+    "KrakenJS",
+    "Angular"
+  ],
+  "author": "Nate Sanders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ppnsanders/pp-spb-examples/issues"
+  },
+  "homepage": "https://github.com/ppnsanders/pp-spb-examples#readme"
+}

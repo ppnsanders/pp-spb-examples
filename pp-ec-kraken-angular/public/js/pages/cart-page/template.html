@@ -1,0 +1,57 @@
+<div id="consumerCartMain" class="ui two column grid">
+    <div class="row">
+        <div class="column"></div>
+        <div class="column">
+            <div id="emptyCartAlert" style="display: none;" class="ui negative message">
+                <div class="header">
+                    You must add an item to the cart before checking out!!
+                </div>
+            </div>
+            <table class="ui celled padded table">
+                <thead>
+                    <tr><th colspan="4">Your Shopping Cart</th><th><div data-tooltip="Clear Cart Contents" class="ui icon button" ng-click="model.clearCart()"><i class="remove circle icon"></i></div></i></th></tr>
+                    <tr>
+                        <th>Remove</th>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cItem in model.cart.items">
+                        <td><button class="ui icon button" ng-click="model.removeItem([[$index]])"><i class="remove circle icon"></i></button></i></td>
+                        <td>[[cItem.name]]</td>
+                        <td>[[cItem.quantity]]</td>
+                        <td>[[cItem.price | currency : "$" : 2]]</td>
+                        <td>[[(cItem.price * cItem.quantity) | currency : "$" : 2]]
+                    </tr>
+                    <tr><td colspan="3"></td><td><strong>Total:</strong></td><td><strong>[[model.cart.total | currency : "$" : 2]]</strong></td></tr>
+                    <tr>
+                        <td colspan="5">
+                            <center><pp-button></pp-button></center>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-repeat="item in model.items" class="column">
+            <img class="ui centered small image" src="http://via.placeholder.com/150x150" />
+            <div class="ui list">
+                <div class="item"><strong>Item Name:</strong> [[item.name]]</div>
+                <div class="item"><strong>SKU:</strong> [[item.sku]]</div>
+                <div class="item"><strong>Price:</strong> [[item.price | currency : "$" : 2]]</div>
+                <div class="item"><strong>Currency:</strong> [[item.currency]]</div>
+                <div class="item"><strong>Qty:</strong> [[item.quantity]]</div>
+                <div class="item"><strong>Category:</strong> [[item.category]]</div>
+                <div class="item"><strong>Description:</strong> [[item.description]]</div>
+                <div class="item"><strong>Subtotal:</strong> [[item.price * item.quantity | currency : "$" : 2]]</div>
+            </div>
+            <button id="[[item.sku]]" class="ui primary button" ng-click="model.addToCart(item)">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>

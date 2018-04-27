@@ -1,0 +1,25 @@
+{
+  "name": "pp-ec-kraken-angular",
+  "description": "PayPal Express Checkout with Smart Payment Buttons on KrakenJS using AngularJS",
+  "main": "index.js",
+  "author": "Nate Sanders",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "^2.3.1",
+    "angular": "^1.6.10",
+    "jquery": "^3.3.1",
+    "angular-cookies": "^1.6.10",
+    "angular-route": "^1.6.10"
+  }
+}
