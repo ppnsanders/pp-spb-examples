@@ -5,6 +5,7 @@
   "main": "install.js",
   "dependencies": {
     "child-process-promise": "^2.2.1",
+    "growl": "^1.10.5",
     "prompt": "^1.0.0"
   },
   "devDependencies": {},
