@@ -26,6 +26,7 @@
 
         <!-- Angular Pages -->
         <script src="/js/pages/home-page/directive.js"></script>
+        <script src="/js/pages/button-config/directive.js"></script>
         <script src="/js/pages/cart-page/directive.js"></script>
         <script src="/js/pages/review-page/directive.js"></script>
 

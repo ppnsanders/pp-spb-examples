@@ -13,6 +13,9 @@ angular.module('ppECKrakenAngular', ['ngRoute', 'ngCookies', 'paypal-button'])
     $cookiesProvider.defaults.secure = false;
     $locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider
+        .when('/button/config', {
+            template: '<button-config></button-config>'
+        })
     	.when('/cart', {
     		template: '<cart-page></cart-page>'
     	})

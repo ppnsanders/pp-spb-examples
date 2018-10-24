@@ -9,18 +9,11 @@ angular.module('ppECKrakenAngular').directive('ppButton', [ () => {
 		controller: ['$scope', '$cookies', '$location', 'checkoutServiceModel', ($scope, $cookies, $location, checkoutServiceModel) => {
 			$scope.model = checkoutServiceModel
 			$scope.model.setup()
-			$scope.env = 'sandbox'
-			$scope.commit = false
-			$scope.style = {
-					layout: 'vertical',
-			        color: 'blue',
-			        size: 'large',
-			        shape: 'rect'
-			}
-			$scope.funding = {
-				allowed: [],
-				disallowed: [ paypal.FUNDING.CREDIT, paypal.FUNDING.CARD ]
-			}
+			$scope.button = $cookies.getObject('button-conf')
+			$scope.env = $scope.button.env
+			$scope.commit = $scope.button.commit
+			$scope.style = $scope.button.style
+			$scope.funding = $scope.button.funding
 			$scope.payment = function () {
 				return new paypal.Promise((resolve, reject) => {
 					const cartError = $scope.checkCart()

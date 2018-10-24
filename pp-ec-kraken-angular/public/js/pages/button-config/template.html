@@ -1,0 +1,50 @@
+<div id="buttonConfig">
+    <div class="ui grid">
+        <div class="two column row">
+            <div class="column"><h2>Button Configuration</h2></div>
+            <div class="column"><span id="merchantInfoSaved" style="display: none; float: right;"><i class="green big check circle icon"></i> Saved</span></div>
+        </div>
+    </div>
+    <hr />
+    <div class="ui grid">
+        <div class="two column row">
+            <div class="column">
+                <div id="buttonConfigForm">
+                    <form class="ui form">
+                        <div class="field">
+                            <label>Environment:</label>
+                            <select class="ui fluid dropdown" ng-options="env as env for env in options[0].env" ng-model="button.env" ng-change="updateButton()">
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Layout:</label>
+                            <select class="ui fluid dropdown" ng-options="layout as layout for layout in options[0].style.layout" ng-model="button.style.layout" ng-change="updateButton()">
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Size:</label>
+                            <select class="ui fluid dropdown" ng-options="size as size for size in options[0].style.size" ng-model="button.style.size" ng-change="updateButton()">
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Shape:</label>
+                            <select class="ui fluid dropdown" ng-options="shape as shape for shape in options[0].style.shape" ng-model="button.style.shape" ng-change="updateButton()">
+                            </select>
+                        </div><div class="field">
+                            <label>Color:</label>
+                            <select class="ui fluid dropdown" ng-options="color as color for color in options[0].style.color" ng-model="button.style.color" ng-change="updateButton()">
+                            </select>
+                        </div>
+                        <button id="setButton" class="ui primary button" type="button" ng-click="setButton()">Save</button>
+                        <button id="defaultButton" class="ui button" type="button" ng-click="defaultButton()">Default Button</button>
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <center>
+                    <div id="buttonPreview"></div>
+                </center>
+            </div>
+        </div>
+    <div style="margin-top: 60px"></div>
+</div>

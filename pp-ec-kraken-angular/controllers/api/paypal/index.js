@@ -1,15 +1,17 @@
 'use strict'
-const paypalConfig = ppConfig()
 const CreatePaymentModel = require('../../../models/paypal/payment/create')
 const paypal = require('paypal-rest-sdk')
 
-paypal.configure({
-	'mode': 'sandbox',
-	'client_id': paypalConfig.client_id,
-	'client_secret': paypalConfig.client_secret
-})
-
 module.exports = (router) => {
+
+	router.post('/configure', (req, res) => {
+		paypal.configure({
+			'mode': req.body.env,
+			'client_id': req.body.client_id,
+			'client_secret': req.body.client_secret
+		})
+		res.json({ config: true })
+	})
 
 	router.post('/payment', (req, res) => {
 		let paymentRequest = new CreatePaymentModel(req.body)
@@ -17,6 +19,7 @@ module.exports = (router) => {
 			if(err) {
 				console.log('ERROR in POST /api/paypal/payment')
 				console.log(err)
+				console.log(JSON.stringify(paymentRequest))
 				res.json(err)
 			} else {
 				res.json(payment)

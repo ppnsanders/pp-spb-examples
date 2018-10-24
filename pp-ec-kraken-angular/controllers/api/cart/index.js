@@ -1,5 +1,4 @@
 'use strict'
-const paypalConfig = ppConfig()
 const CartModel = require('../../../models/cart')
 
 module.exports = (router) => {

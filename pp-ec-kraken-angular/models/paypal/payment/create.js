@@ -1,5 +1,4 @@
 'use strict'
-const paypalConfig = ppConfig()
 const faker = require('faker')
 
 module.exports = function CreatePaymentModel(items) {
@@ -17,7 +16,7 @@ module.exports = function CreatePaymentModel(items) {
             payment.transactions[0].description = faker.lorem.sentence()
             payment.transactions[0].custom = faker.random.uuid()
             payment.transactions[0].invoice_number = payment.transactions[0].custom
-            payment.transactions[0].soft_descriptor = paypalConfig.brandName
+            payment.transactions[0].soft_descriptor = "Test App"
             //amount object
             payment.transactions[0].amount = {}
             payment.transactions[0].amount.currency = "USD"

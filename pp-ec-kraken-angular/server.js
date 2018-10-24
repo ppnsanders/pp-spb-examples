@@ -1,17 +1,5 @@
 'use strict';
 
-const paypalConfig = require('../paypal/config.json')
-
-/* function ppConfig()
- * 
- * Description: Returns the PayPal config from the root of pp-spb-examples
- *
- * @return: object
- */
-global.ppConfig = () => {
-	return paypalConfig
-}
-
 var app = require('./index');
 var http = require('http');
 
