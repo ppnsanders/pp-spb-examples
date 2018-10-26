@@ -23,11 +23,7 @@
         "lodash": "^4.17.10",
         "makara": "^2.0.3",
         "paypal-rest-sdk": "^1.8.1",
-<<<<<<< HEAD
         "randomatic": "^3.1.1",
-=======
-        "randomatic": "^3.1.0",
->>>>>>> 25d35fafe46c6a243b287d3b8b682d00b028e75f
         "request": "^2.85.0",
         "superagent": "^3.8.3"
     },
